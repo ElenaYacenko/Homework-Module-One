@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -9,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class StudentRegistrationFormTest extends tests.TestBase {
 
     @Test
-    void successfulFullFormFillTest() {
+     void successfulFullFormFillTest() {
         open("/automation-practice-form");
 
         $("[id=firstName]").setValue("Elena");
