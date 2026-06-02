@@ -86,7 +86,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
         $("[id=lastName]").setValue("YaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYa" +
                 "YaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYa" +
                 "YaYaYaYaYaYa-YaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYa" +
-                "123456"); //257 символов
+                "1234567"); //257 символов
         $("[id='genterWrapper'] input[value='Male']").click();
         $("[id=userNumber]").setValue("9999999999");
 
