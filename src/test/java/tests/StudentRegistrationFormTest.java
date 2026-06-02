@@ -10,6 +10,9 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
      void successfulFullFormFillTest() {
         open("/automation-practice-form");
+        /* убрать банеры которые перекрывают форму */
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
@@ -47,6 +50,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void requiredFieldsOnlyFormFillTest() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
@@ -66,6 +71,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_FirstNameOneCharacterRejected() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("E");
         $("[id=lastName]").setValue("Ya");
@@ -81,6 +88,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_LastNameExceedsMaxLengthShowsRedBorder() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("YaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYa" +
@@ -99,6 +108,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_EmptyRequiredFieldsShowRedBorders() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=submit]").click();
 
@@ -115,6 +126,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_InvalidPhoneNumberShowsRedBorder() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
@@ -130,6 +143,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_PhoneNumberWithLettersShowsRedBorder() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
@@ -145,6 +160,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_MissingFirstNameShowsRedBorder(){
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=lastName]").setValue("Ya");
         $("[id='genterWrapper'] input[value='Female']").click();
@@ -159,6 +176,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_MissingLastNameShowsRedBorder() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id='genterWrapper'] input[value='Male']").click();
@@ -173,6 +192,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_MissingMobileShowsRedBorder() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
@@ -187,6 +208,8 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     void negativeTest_UnselectedGenderShowsValidationError() {
         open("/automation-practice-form");
+        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
+                          "document.querySelector('footer')?.remove();\n");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");
