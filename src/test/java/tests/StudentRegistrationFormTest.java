@@ -9,10 +9,13 @@ public class StudentRegistrationFormTest extends tests.TestBase {
 
     @Test
      void successfulFullFormFillTest() {
-        open("/automation-practice-form");
+        open("/automation-practice-form.html");
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
+        //open("/automation-practice-form");  // если запускать не локально
         /* убрать банеры которые перекрывают форму */
-        executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
-                          "document.querySelector('footer')?.remove();\n");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         $("[id=firstName]").setValue("Elena");
         $("[id=lastName]").setValue("Ya");

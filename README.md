@@ -1,7 +1,6 @@
 # Practice Form Student Registration Form 
 
-Автоматизированные тесты для проверки формы регистрации студентов на [DemoQA](https://demoqa.com/automation-practice-form).
-
+Автоматизированные тесты для проверки формы регистрации Локально
 ---
 ##             Форма регистрации
 
