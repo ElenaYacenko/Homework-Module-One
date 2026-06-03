@@ -10,9 +10,9 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browser = "chrome";
-        //Configuration.browserSize = "1920x1080";
-
+        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.headless = true;
 
         Configuration.timeout = 10000; // default 4000
     }
