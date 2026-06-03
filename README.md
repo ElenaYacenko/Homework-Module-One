@@ -25,15 +25,15 @@
 |-------------|-----|-----------------|
 | `successfulFullFormFillTest` | ✅ Позитивный | Полное заполнение всех полей формы, проверка данных в модальном окне |
 | `requiredFieldsOnlyFormFillTest` | ✅ Позитивный | Заполнение только обязательных полей, успешная отправка |
-| `negativeTest_EmptyRequiredFieldsShowRedBorders` |  Негативный | Отправка пустой формы, проверка красных рамок у обязательных полей |
-| `negativeTest_InvalidPhoneNumberShowsRedBorder` | ❌ Негативный | Ввод 9-значного номера в поле телефона, проверка валидации |
-| `negativeTest_PhoneNumberWithLettersShowsRedBorder` | ❌ Негативный | Ввод букв в поле телефона, проверка подсветки ошибки |
-| `negativeTest_MissingFirstNameShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения First Name (пустое поле) |
-| `negativeTest_MissingLastNameShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения Last Name (пустое поле) |
-| `negativeTest_MissingMobileShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения поля телефона |
-| `negativeTest_UnselectedGenderShowsValidationError` | ❌ Негативный | Отправка формы без выбора пола |
-| `negativeTest_LastNameExceedsMaxLengthShowsRedBorder` | ❌ Негативный | Ввод 260 символов в поле фамилии, проверка отклонения |
-| `negativeTest_FirstNameOneCharacterRejected` | ❌ Негативный | Ввод 1 символа в First Name (проверка минимальной длины) |
+| `negativeTestEmptyRequiredFieldsShowRedBorders` |  Негативный | Отправка пустой формы, проверка красных рамок у обязательных полей |
+| `negativeTestInvalidPhoneNumberShowsRedBorder` | ❌ Негативный | Ввод 9-значного номера в поле телефона, проверка валидации |
+| `negativeTestPhoneNumberWithLettersShowsRedBorder` | ❌ Негативный | Ввод букв в поле телефона, проверка подсветки ошибки |
+| `negativeTestMissingFirstNameShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения First Name (пустое поле) |
+| `negativeTestMissingLastNameShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения Last Name (пустое поле) |
+| `negativeTestMissingMobileShowsRedBorder` | ❌ Негативный | Отправка формы без заполнения поля телефона |
+| `negativeTestUnselectedGenderShowsValidationError` | ❌ Негативный | Отправка формы без выбора пола |
+| `negativeTestLastNameExceedsMaxLengthShowsRedBorder` | ❌ Негативный | Ввод 260 символов в поле фамилии, проверка отклонения |
+| `negativeTestFirstNameOneCharacterRejected` | ❌ Негативный | Ввод 1 символа в First Name (проверка минимальной длины) |
 
 ---
 

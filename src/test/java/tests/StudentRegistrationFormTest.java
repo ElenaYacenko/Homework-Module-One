@@ -1,8 +1,7 @@
 package tests;
 
-import com.codeborne.selenide.selector.ByText;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -10,6 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class StudentRegistrationFormTest extends tests.TestBase {
 
     @Test
+    @DisplayName("Позитивный тест: успешная регистрация с полным заполнением всех полей формы")
     void successfulFullFormFillTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -55,6 +55,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Позитивный тест: успешная регистрация с заполнением только обязательных полей")
     void requiredFieldsOnlyFormFillTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -75,6 +76,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: ввод 1 символа в поле First Name подсвечивается красной рамкой")
     void negativeTestFirstNameOneCharacterRejected() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -91,6 +93,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: ввод 257 символов в поле Last Name подсвечивается красной рамкой")
     void negativeTestLastNameExceedsMaxLengthShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -110,6 +113,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: отправка пустой формы подсвечивает обязательные поля красным")
     void negativeTestEmptyRequiredFieldsShowRedBorders() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -127,6 +131,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: ввод 9 цифр в поле телефона подсвечивается красной рамкой")
     void negativeTestInvalidPhoneNumberShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -134,7 +139,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
         $("#firstName").setValue("Elena");
         $("#lastName").setValue("Ya");
         $("#genterWrapper").$(byText("Male")).click();
-        $("#userNumber").setValue("999999999"); // телефон из 9 символов
+        $("#userNumber").setValue("123456789"); // телефон из 9 символов
 
         $("#submit").click();
 
@@ -143,6 +148,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: ввод букв в поле телефона подсвечивается красной рамкой")
     void negativeTestPhoneNumberWithLettersShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -159,6 +165,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: пустое поле First Name подсвечивается красной рамкой")
     void negativeTestMissingFirstNameShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -174,6 +181,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: пустое поле Last Name подсвечивается красной рамкой")
     void negativeTestMissingLastNameShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -189,6 +197,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: пустое поле телефона подсвечивается красной рамкой")
     void negativeTestMissingMobileShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -204,6 +213,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
+    @DisplayName("Негативный тест: отсутствие выбора Gender подсвечивается красной рамкой")
     void negativeTestUnselectedGenderShowsValidationError() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
