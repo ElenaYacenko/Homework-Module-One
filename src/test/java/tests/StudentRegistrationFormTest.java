@@ -10,12 +10,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class StudentRegistrationFormTest extends tests.TestBase {
 
     @Test
-     void successfulFullFormFillTest() {
+    void successfulFullFormFillTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-        /* убрать банеры которые перекрывают форму
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");*/
+        /* убрать банеры которые перекрывают форму*/
+        executeJavaScript(""" 
+                document.getElementById('fixedban')?.remove();
+                document.querySelector('footer')?.remove();
+                """);
 
         $("#firstName").setValue("Elena");
         $("#lastName").setValue("Ya");
@@ -157,7 +159,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTestMissingFirstNameShowsRedBorder(){
+    void negativeTestMissingFirstNameShowsRedBorder() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
