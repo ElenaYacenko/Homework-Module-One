@@ -72,7 +72,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_FirstNameOneCharacterRejected() {
+    void negativeTestFirstNameOneCharacterRejected() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -89,7 +89,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_LastNameExceedsMaxLengthShowsRedBorder() {
+    void negativeTestLastNameExceedsMaxLengthShowsRedBorder() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -109,7 +109,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_EmptyRequiredFieldsShowRedBorders() {
+    void negativeTestEmptyRequiredFieldsShowRedBorders() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -127,7 +127,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_InvalidPhoneNumberShowsRedBorder() {
+    void negativeTestInvalidPhoneNumberShowsRedBorder() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -144,7 +144,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_PhoneNumberWithLettersShowsRedBorder() {
+    void negativeTestPhoneNumberWithLettersShowsRedBorder() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -161,7 +161,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_MissingFirstNameShowsRedBorder(){
+    void negativeTestMissingFirstNameShowsRedBorder(){
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -177,7 +177,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_MissingLastNameShowsRedBorder() {
+    void negativeTestMissingLastNameShowsRedBorder() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -193,7 +193,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_MissingMobileShowsRedBorder() {
+    void negativeTestMissingMobileShowsRedBorder() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
@@ -209,7 +209,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     }
 
     @Test
-    void negativeTest_UnselectedGenderShowsValidationError() {
+    void negativeTestUnselectedGenderShowsValidationError() {
         open("/automation-practice-form");
         executeJavaScript("document.getElementById('fixedban')?.remove();\n" +
                           "document.querySelector('footer')?.remove();\n");
