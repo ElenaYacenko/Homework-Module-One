@@ -13,6 +13,7 @@ public class TextBoxTests extends TestBase {
     @DisplayName("Позитивный тест: форма с заполнеными полями")
     void successfulFillFormTest() {
         open("/text-box.html");
+
         $("#userName").setValue("Alex Black");
         $("#userEmail").setValue("alex@black.com");
         $("#currentAddress").setValue("first address 1");
@@ -26,7 +27,7 @@ public class TextBoxTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Негативный тест: отправка пустой формы")
+    @DisplayName("Отправка пустой формы")
     void emptyFormTest() {
         open("/text-box.html");
 
@@ -42,6 +43,7 @@ public class TextBoxTests extends TestBase {
     @DisplayName("Отправка формы с не заполнеными полями адресов")
     void empryAddress() {
         open("/text-box.html");
+
         $("#userName").setValue("Alex Black");
         $("#userEmail").setValue("alex@black.com");
         $("#submit").click();
@@ -57,7 +59,6 @@ public class TextBoxTests extends TestBase {
     void invalidEmailWithoutAtSymbolTest() {
         open("/text-box.html");
 
-        // Заполняем форму
         $("#userName").setValue("Елена");
         $("#userEmail").setValue("test1mail.ru");
         $("#currentAddress").setValue("Ля ля ФА");
