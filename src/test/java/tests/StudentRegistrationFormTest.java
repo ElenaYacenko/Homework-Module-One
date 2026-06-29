@@ -1,7 +1,9 @@
 package tests;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -9,6 +11,16 @@ import static testsData.DataFormTest.*;
 
 
 public class StudentRegistrationFormTest extends tests.TestBase {
+
+    @BeforeEach
+    void beforeEach() {
+        open("/automation-practice-form");
+        /* убрать банеры которые перекрывают форму*/
+        executeJavaScript(""" 
+                document.getElementById('fixedban')?.remove();
+                document.querySelector('footer')?.remove();
+                """);
+    }
 
     @Test
     @DisplayName("Успешная регистрация с полным заполнением всех полей формы")
@@ -35,7 +47,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
 
         $(".modal-content").shouldBe(visible);
 
-        $("#example-modal-sizes-title-lg").shouldHave(text("nameOfTheFinalForm"));
+        $("#example-modal-sizes-title-lg").shouldHave(text(nameOfTheFinalForm));
         $x("//tr[td[contains(., 'Student Name')]]/td[2]").shouldHave(text(fullName));
         $x("//tr[td[contains(., 'Student Email')]]/td[2]").shouldHave(text(userEmail));
         $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(genterWrapper));
@@ -62,7 +74,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
 
         $(".modal-content").shouldBe(visible);
 
-        $("#example-modal-sizes-title-lg").shouldHave(text("nameOfTheFinalForm"));
+        $("#example-modal-sizes-title-lg").shouldHave(text(nameOfTheFinalForm));
         $x("//tr[td[contains(., 'Student Name')]]/td[2]").shouldHave(text(fullName));
         $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(genterWrapper));
         $x("//tr[td[contains(., 'Mobile')]]/td[2]").shouldHave(text(userNumber));
@@ -136,6 +148,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
     @Test
     @DisplayName("Ввод букв в поле телефона - поле подсвечивается красной рамкой")
     void negativeTestPhoneNumberWithLettersShowsRedBorder() {
+
         $(".practice-form-wrapper").shouldHave(text(nameOfTheForm));
 
         $("#firstName").setValue(firstName);

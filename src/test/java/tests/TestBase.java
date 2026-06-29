@@ -19,16 +19,6 @@ public class TestBase {
         Configuration.timeout = 10000; // default 4000
     }
 
-    @BeforeEach
-    void beforeEach(){
-        open("/automation-practice-form");
-
-        /* убрать банеры которые перекрывают форму*/
-        executeJavaScript(""" 
-                document.getElementById('fixedban')?.remove();
-                document.querySelector('footer')?.remove();
-                """);
-    }
     @AfterEach
     void afterEach() {
         closeWebDriver();
