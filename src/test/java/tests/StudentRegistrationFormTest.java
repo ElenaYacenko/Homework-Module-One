@@ -35,7 +35,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
 
         $(".modal-content").shouldBe(visible);
 
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(text("nameOfTheFinalForm"));
         $x("//tr[td[contains(., 'Student Name')]]/td[2]").shouldHave(text(fullName));
         $x("//tr[td[contains(., 'Student Email')]]/td[2]").shouldHave(text(userEmail));
         $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(genterWrapper));
@@ -62,7 +62,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
 
         $(".modal-content").shouldBe(visible);
 
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(text("nameOfTheFinalForm"));
         $x("//tr[td[contains(., 'Student Name')]]/td[2]").shouldHave(text(fullName));
         $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(genterWrapper));
         $x("//tr[td[contains(., 'Mobile')]]/td[2]").shouldHave(text(userNumber));

@@ -15,5 +15,6 @@ public class DataFormTest {
             userNumber = "1234567890",
             invalidUserNumber="123456789", // 9 символов
             userNumberNotNumbers="ТелеНомера",// буквы в телефоне
-    nameOfTheForm = "Student Registration Form";
+    nameOfTheForm = "Student Registration Form",
+            nameOfTheFinalForm= "Thanks for submitting the form";
 }
