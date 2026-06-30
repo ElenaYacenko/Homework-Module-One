@@ -38,7 +38,7 @@ public class StudentRegistrationFormTest extends tests.TestBase {
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__day--0" + day).click();
         $("#subjectsInput").setValue(subject).pressEnter();
-        $("#hobbies-checkbox-2").click();
+        $x("//label[contains(text(), '" + hobbies + "')]").click();
         $("#uploadPicture").uploadFromClasspath("img/1.png");
         $("#currentAddress").setValue(currentAddress);
         $("#react-select-3-input").setValue(country).pressEnter();
