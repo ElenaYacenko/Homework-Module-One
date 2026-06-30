@@ -34,15 +34,15 @@ public class StudentRegistrationFormTest extends tests.TestBase {
         $("#genterWrapper").$(byText(genterWrapper)).click();
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("March");
-        $(".react-datepicker__year-select").selectOption("2020");
-        $(".react-datepicker__day--030").click();
-        $("#subjectsInput").setValue("Maths").pressEnter();
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+        $(".react-datepicker__day--0" + day).click();
+        $("#subjectsInput").setValue(subject).pressEnter();
         $("#hobbies-checkbox-2").click();
         $("#uploadPicture").uploadFromClasspath("img/1.png");
-        $("#currentAddress").setValue("RU");
-        $("#react-select-3-input").setValue("Haryana").pressEnter();
-        $("#react-select-4-input").setValue("Karnal").pressEnter();
+        $("#currentAddress").setValue(currentAddress);
+        $("#react-select-3-input").setValue(country).pressEnter();
+        $("#react-select-4-input").setValue(city).pressEnter();
         $("#submit").scrollTo().click();
 
         $(".modal-content").shouldBe(visible);
@@ -52,12 +52,12 @@ public class StudentRegistrationFormTest extends tests.TestBase {
         $x("//tr[td[contains(., 'Student Email')]]/td[2]").shouldHave(text(userEmail));
         $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(genterWrapper));
         $x("//tr[td[contains(., 'Mobile')]]/td[2]").shouldHave(text(userNumber));
-        $x("//tr[td[contains(., 'Date of Birth')]]/td[2]").shouldHave(text("30 March,2020"));
-        $x("//tr[td[contains(., 'Subjects')]]/td[2]").shouldHave(text("Maths"));
-        $x("//tr[td[contains(., 'Hobbies')]]/td[2]").shouldHave(text("Reading"));
+        $x("//tr[td[contains(., 'Date of Birth')]]/td[2]").shouldHave(text(day + " " + month + "," + year));
+        $x("//tr[td[contains(., 'Subjects')]]/td[2]").shouldHave(text(subject));
+        $x("//tr[td[contains(., 'Hobbies')]]/td[2]").shouldHave(text(hobbies));
         $x("//tr[td[contains(., 'Picture')]]/td[2]").shouldHave(text("1.png"));
-        $x("//tr[td[contains(., 'Address')]]/td[2]").shouldHave(text("RU"));
-        $x("//tr[td[contains(., 'State and City')]]/td[2]").shouldHave(text("Haryana Karnal"));
+        $x("//tr[td[contains(., 'Address')]]/td[2]").shouldHave(text(currentAddress));
+        $x("//tr[td[contains(., 'State and City')]]/td[2]").shouldHave(text(country + " " + city));
     }
 
     @Test

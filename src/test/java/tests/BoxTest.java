@@ -21,8 +21,8 @@ public class BoxTest extends TestBase {
 
         $("#userName").setValue(firstName);
         $("#userEmail").setValue(userEmail);
-        $("#currentAddress").setValue("first address 1");
-        $("#permanentAddress").setValue("second address 2");
+        $("#currentAddress").setValue(currentAddress);
+        $("#permanentAddress").setValue(permanentAddress);
         $("#submit").click();
 
         $("[id=output] [id=name]").shouldHave(text(firstName));
@@ -68,6 +68,6 @@ public class BoxTest extends TestBase {
 
         $("#submit").click();
 
-        $("#output").shouldNotHave(cssClass("has-content"));
+        $("#output").shouldNotHave(cssClass(output));
     }
 }

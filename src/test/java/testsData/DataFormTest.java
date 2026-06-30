@@ -19,5 +19,13 @@ public class DataFormTest {
             currentAddress = "first address 1",
             permanentAddress = "second address 2",
             nameOfTheForm = "Student Registration Form",
-            nameOfTheFinalForm = "Thanks for submitting the form";
+            nameOfTheFinalForm = "Thanks for submitting the form",
+            output = "has-content",
+            month = "March",
+            year = "2020",
+            day = "30",
+            country = "Haryana",
+            city = "Karnal",
+            subject ="Maths",
+            hobbies = "Reading";
 }
