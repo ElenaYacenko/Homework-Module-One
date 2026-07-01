@@ -19,24 +19,19 @@ public class FormTestData {
             tooShortPhoneNumber = "123456789",       // 9 символов
             phoneWithLetters = "ТелеНомера",// буквы в телефоне
 
-
             currentAddress = "first address 1",
             permanentAddress = "second address 2",
-
 
             formTitle = "Student Registration Form",
             successModalTitle = "Thanks for submitting the form",
             resultTableClass = "has-content",
 
-
             dobMonth = "March",
             dobYear = "2020",
             dobDay = "30",
 
-
             state = "Haryana",
             city = "Karnal",
-
 
             subject = "Maths",
             hobbies = "Reading",

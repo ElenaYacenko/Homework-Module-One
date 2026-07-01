@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
 
-    private SelenideElement monthInput =$(".react-datepicker__month-select");
+    private SelenideElement monthInput = $(".react-datepicker__month-select");
     private SelenideElement yearInput = $(".react-datepicker__year-select");
 
     public void setDate(String year, String month, String day) {

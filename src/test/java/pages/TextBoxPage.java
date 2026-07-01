@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static testsData.FormTestData.resultTableClass;
+import static testsData.FormTestData.*;
 
 public class TextBoxPage {
     //Элемены формы

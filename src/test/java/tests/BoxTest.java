@@ -49,7 +49,7 @@ public class BoxTest extends TestBase {
                 .checkField("name", firstName)
                 .checkField("email", userEmail)
                 .checkField("currentAddress", "")
-                .checkField("permanentAddress"," ");
+                .checkField("permanentAddress", " ");
     }
 
     @Test
