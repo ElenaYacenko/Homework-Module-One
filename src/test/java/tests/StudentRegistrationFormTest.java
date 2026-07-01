@@ -1,9 +1,9 @@
 package tests;
 
 import base.TestBase;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.StudentRegistrationPage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -12,53 +12,40 @@ import static testsData.FormTestData.*;
 
 
 public class StudentRegistrationFormTest extends TestBase {
-
-    @BeforeEach
-    void beforeEach() {
-        open("/automation-practice-form");
-        /* убрать банеры которые перекрывают форму*/
-        executeJavaScript(""" 
-                document.getElementById('fixedban')?.remove();
-                document.querySelector('footer')?.remove();
-                """);
-    }
+    StudentRegistrationPage registrationPage = new StudentRegistrationPage();
 
     @Test
     @DisplayName("Успешная регистрация с полным заполнением всех полей формы")
     void successfulFullFormFillTest() {
 
-        $(".practice-form-wrapper").shouldHave(text(formTitle));
-
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
-        $("#userEmail").setValue(userEmail);
-        $("#genterWrapper").$(byText(gender)).click();
-        $("#userNumber").setValue(phoneNumber);
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(dobMonth);
-        $(".react-datepicker__year-select").selectOption(dobYear);
-        $(".react-datepicker__day--0" + dobDay).click();
-        $("#subjectsInput").setValue(subject).pressEnter();
-        $x("//label[contains(text(), '" + hobbies + "')]").click();
-        $("#uploadPicture").uploadFromClasspath(ImagePath);
-        $("#currentAddress").setValue(currentAddress);
-        $("#react-select-3-input").setValue(state).pressEnter();
-        $("#react-select-4-input").setValue(city).pressEnter();
-        $("#submit").scrollTo().click();
-
-        $(".modal-content").shouldBe(visible);
-
-        $("#example-modal-sizes-title-lg").shouldHave(text(successModalTitle));
-        $x("//tr[td[contains(., 'Student Name')]]/td[2]").shouldHave(text(fullName));
-        $x("//tr[td[contains(., 'Student Email')]]/td[2]").shouldHave(text(userEmail));
-        $x("//tr[td[contains(., 'Gender')]]/td[2]").shouldHave(text(gender));
-        $x("//tr[td[contains(., 'Mobile')]]/td[2]").shouldHave(text(phoneNumber));
-        $x("//tr[td[contains(., 'Date of Birth')]]/td[2]").shouldHave(text(dobDay + " " + dobMonth + "," + dobYear));
-        $x("//tr[td[contains(., 'Subjects')]]/td[2]").shouldHave(text(subject));
-        $x("//tr[td[contains(., 'Hobbies')]]/td[2]").shouldHave(text(hobbies));
-        $x("//tr[td[contains(., 'Picture')]]/td[2]").shouldHave(text(testImagePath));
-        $x("//tr[td[contains(., 'Address')]]/td[2]").shouldHave(text(currentAddress));
-        $x("//tr[td[contains(., 'State and City')]]/td[2]").shouldHave(text(state + " " + city));
+        registrationPage
+                .openPage()
+                .verifyFormTitle(formTitle)
+                .typesFirstNameInput(firstName)
+                .typesLastNameInput(lastName)
+                .typesEmailInput(userEmail)
+                .selectGender(gender)
+                .typesPhoneNumber(phoneNumber)
+                .setDateOfBirth(dobYear, dobMonth, dobDay)
+                .typesSubjectsInput(subject)
+                .selectHobbiesCheckbox(hobbies)
+                .imageUploadPath(imagePath)
+                .typesCurrentAddressInput(currentAddress)
+                .selectState(state)
+                .selectCity(city)
+                .clickOnSubmitButton()
+                .visibleModalForm()
+                .verifyFormTitleModal(successModalTitle)
+                .verifyStudentName(fullName)
+                .verifyStudentEmail(userEmail)
+                .verifyStudentGender(gender)
+                .verifyStudentPhone(phoneNumber)
+                .verifyStudentDateOfBirth(dobDay, dobMonth, dobYear)
+                .verifyStudentSubjects(subject)
+                .verifyStudentHobbies(hobbies)
+                .verifyStudentPicture(testImagePath)
+                .verifyStudentAddress(currentAddress)
+                .verifyStudentStateAndCity(state, city);
     }
 
     @Test
