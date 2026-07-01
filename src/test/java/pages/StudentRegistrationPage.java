@@ -13,30 +13,30 @@ public class StudentRegistrationPage {
     CalendarComponent calendar = new CalendarComponent();
     StateCityComponent locationComponent = new StateCityComponent();
     //Элемены формы
-    private SelenideElement formTitlePage = $(".practice-form-wrapper h5");
-    private SelenideElement firstNameInput = $("#firstName");
-    private SelenideElement lastNameInput = $("#lastName");
-    private SelenideElement emailInput = $("#userEmail");
-    private SelenideElement genderRadioInput = $("#genterWrapper");
-    private SelenideElement genderBorder = $("[name=gender]");
-    private SelenideElement phoneNumberInput = $("#userNumber");
-    private SelenideElement birthInput = $("#dateOfBirthInput");
-    private SelenideElement subjectsCompleteInput = $("#subjectsInput");
-    private SelenideElement imagePathInput = $("#uploadPicture");
-    private SelenideElement currentAddressInput = $("#currentAddress");
-    private SelenideElement submitButton = $("#submit");
-    private SelenideElement formModal = $(".modal-content");
-    private SelenideElement formTitleModal = $("#example-modal-sizes-title-lg");
-    private SelenideElement studentName = $x("//tr[td[contains(., 'Student Name')]]/td[2]");
-    private SelenideElement studentEmail = $x("//tr[td[contains(., 'Student Email')]]/td[2]");
-    private SelenideElement studentGender = $x("//tr[td[contains(., 'Gender')]]/td[2]");
-    private SelenideElement studentPhone = $x("//tr[td[contains(., 'Mobile')]]/td[2]");
-    private SelenideElement studentDateOfBirth = $x("//tr[td[contains(., 'Date of Birth')]]/td[2]");
-    private SelenideElement studentSubjects = $x("//tr[td[contains(., 'Subjects')]]/td[2]");
-    private SelenideElement studentHobbies = $x("//tr[td[contains(., 'Hobbies')]]/td[2]");
-    private SelenideElement studentPicture = $x("//tr[td[contains(., 'Picture')]]/td[2]");
-    private SelenideElement studentAddress = $x("//tr[td[contains(., 'Address')]]/td[2]");
-    private SelenideElement studentStateAndCity = $x("//tr[td[contains(., 'State and City')]]/td[2]");
+    private final SelenideElement formTitlePage = $(".practice-form-wrapper h5");
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement lastNameInput = $("#lastName");
+    private final SelenideElement emailInput = $("#userEmail");
+    private final SelenideElement genderRadioInput = $("#genterWrapper");
+    private final SelenideElement genderBorder = $("[name=gender]");
+    private final SelenideElement phoneNumberInput = $("#userNumber");
+    private final SelenideElement birthInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectsCompleteInput = $("#subjectsInput");
+    private final SelenideElement imagePathInput = $("#uploadPicture");
+    private final SelenideElement currentAddressInput = $("#currentAddress");
+    private final SelenideElement submitButton = $("#submit");
+    private final SelenideElement formModal = $(".modal-content");
+    private final SelenideElement formTitleModal = $("#example-modal-sizes-title-lg");
+    private final SelenideElement studentName = $x("//tr[td[contains(., 'Student Name')]]/td[2]");
+    private final SelenideElement studentEmail = $x("//tr[td[contains(., 'Student Email')]]/td[2]");
+    private final SelenideElement studentGender = $x("//tr[td[contains(., 'Gender')]]/td[2]");
+    private final SelenideElement studentPhone = $x("//tr[td[contains(., 'Mobile')]]/td[2]");
+    private final SelenideElement studentDateOfBirth = $x("//tr[td[contains(., 'Date of Birth')]]/td[2]");
+    private final SelenideElement studentSubjects = $x("//tr[td[contains(., 'Subjects')]]/td[2]");
+    private final SelenideElement studentHobbies = $x("//tr[td[contains(., 'Hobbies')]]/td[2]");
+    private final SelenideElement studentPicture = $x("//tr[td[contains(., 'Picture')]]/td[2]");
+    private final SelenideElement studentAddress = $x("//tr[td[contains(., 'Address')]]/td[2]");
+    private final SelenideElement studentStateAndCity = $x("//tr[td[contains(., 'State and City')]]/td[2]");
 
     //Действия
     public StudentRegistrationPage openPage() {

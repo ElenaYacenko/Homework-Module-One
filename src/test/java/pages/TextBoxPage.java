@@ -11,12 +11,12 @@ import static testsData.FormTestData.*;
 
 public class TextBoxPage {
     //Элемены формы
-    private SelenideElement userNameInput = $("#userName");
-    private SelenideElement userEmailInput = $("#userEmail");
-    private SelenideElement userCurrentAddressInput = $("#currentAddress");
-    private SelenideElement userPermanentAddressInput = $("#permanentAddress");
-    private SelenideElement outputResults = $("#output");
-    private SelenideElement submitButton = $("#submit");
+    private final SelenideElement userNameInput = $("#userName");
+    private final SelenideElement userEmailInput = $("#userEmail");
+    private final SelenideElement userCurrentAddressInput = $("#currentAddress");
+    private final SelenideElement userPermanentAddressInput = $("#permanentAddress");
+    private final SelenideElement outputResults = $("#output");
+    private final SelenideElement submitButton = $("#submit");
 
 
     //Действия
