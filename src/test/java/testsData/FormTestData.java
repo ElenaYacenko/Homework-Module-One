@@ -41,5 +41,6 @@ public class FormTestData {
             subject = "Maths",
             hobbies = "Reading",
 
-            testImagePath = "img/1.png";
+            ImagePath = "img/1.png",
+            testImagePath = "1.png";
 }
