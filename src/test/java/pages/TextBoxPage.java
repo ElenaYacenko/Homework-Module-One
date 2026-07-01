@@ -59,7 +59,7 @@ public class TextBoxPage {
         return this;
     }
 
-    public TextBoxPage verifyOutputNotDisplayed() {
+    public TextBoxPage verifyEmailFieldHasRedBorder() {
         outputResults.shouldNotHave(cssClass(resultTableClass));
         return this;
     }

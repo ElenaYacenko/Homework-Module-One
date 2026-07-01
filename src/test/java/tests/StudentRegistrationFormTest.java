@@ -1,5 +1,6 @@
 package tests;
 
+import base.TestBase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static testsData.DataFormTest.*;
 
 
-public class StudentRegistrationFormTest extends tests.TestBase {
+public class StudentRegistrationFormTest extends TestBase {
 
     @BeforeEach
     void beforeEach() {
